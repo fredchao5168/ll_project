@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-2016*qkrffvf=6chf7!6wg7!9@@66w&&#d^$$o=3=-&@_z^=%f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 
 
 # Application definition
@@ -135,27 +136,29 @@ LOGOUT_REDIRECT_URL = 'learning_logs:index'
 LOGIN_URL = 'accounts:login'
 
 # Platform.sh settings.
-from platformshconfig import Config
+#from platformshconfig import Config
 
-config = Config()
-if  config.is_valid_platform():
-    ALLOWED_HOSTS.append('.platformsh.site')
+#config = Config()
+#if  config.is_valid_platform():
+    #ALLOWED_HOSTS.append('.platformsh.site')
 
-    if config.appDir:
-        STATIC_ROOT = Path(config.appDir) / 'static'
-    if config.projectEntropy:
-        SECRET_KEY = config.projectEntropy
+    #if config.appDir:
+        #STATIC_ROOT = Path(config.appDir) / 'static'
+    #if config.projectEntropy:
+        #SECRET_KEY = config.projectEntropy
 
-    if not config.in_build():
-        db_settings = config.credentials('database')
-        DATABASES = {
-            'default':{
-                'ENGINE': 'django.db.backends.postgresql',
-                'NAME': db_settings['path'],
-                'USER': db_settings['username'],
-                'PASSWORD': db_settings['password'],
-                'HOST': db_settings['host'],
-                'PORT': db_settings['port'],
-            },
-        }
+    #if not config.in_build():
+        #db_settings = config.credentials('database')
+        #DATABASES = {
+            #'default':{
+                #'ENGINE': 'django.db.backends.postgresql',
+                #'NAME': db_settings['path'],
+                #'USER': db_settings['username'],
+                #'PASSWORD': db_settings['password'],
+                #'HOST': db_settings['host'],
+                #'PORT': db_settings['port'],
+            #},
+        #}
 
+#靜態檔案設定（讓 CSS / JS 可用）
+STATIC_ROOT = BASE_DIR / 'staticfiles'
