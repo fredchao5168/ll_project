@@ -1,4 +1,10 @@
 import os
+import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ll_project.settings")
+django.setup()  # ← 這行會初始化 Django 環境
+
+
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
