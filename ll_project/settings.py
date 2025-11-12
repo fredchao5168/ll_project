@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,6 +33,9 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 # Application definition
 
 INSTALLED_APPS = [
+    # Use django-jazzmin
+    'jazzmin',
+        
     # My apps
     'learning_logs',
     'accounts',
@@ -56,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'll_project.urls'
@@ -162,3 +167,11 @@ LOGIN_URL = 'accounts:login'
 
 #靜態檔案設定（讓 CSS / JS 可用）
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# 改配色
+JAZZMIN_SETTINGS = {
+    "site_title": "LL 管理後台",
+    "site_header": "LL 後台系統",
+    "welcome_sign": "歡迎使用 LL 後台",
+    "show_ui_builder": False,
+}
