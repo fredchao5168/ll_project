@@ -1,6 +1,7 @@
 asgiref==3.10.0
 Django==5.2.7
 django-bootstrap5==25.2
+django-jazzmin==3.0.1
 gunicorn==23.0.0
 packaging==25.0
 platformshconfig==2.4.0
