@@ -1,0 +1,15 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+<h1>{{ lesson.title }}</h1>
+{% endblock page_header %}
+
+{% block content %}
+<div class="mb-4">
+    {{ lesson.content|linebreaks }}
+</div>
+
+<a class="btn btn-outline-primary" href="{% url 'courses:course_detail' lesson.course.slug %}">
+    ← 回到課程
+</a>
+{% endblock content %}

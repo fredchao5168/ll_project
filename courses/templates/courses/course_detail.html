@@ -1,0 +1,23 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+<h1>{{ course.title }}</h1>
+{% endblock page_header %}
+
+{% block content %}
+<p>{{ course.description }}</p>
+
+<h3 class="mt-4">課程單元</h3>
+<ul class="list-group">
+    {% for lesson in course.lessons.all %}
+    <li class="list-group-item">
+        <a href="{% url 'courses:lesson_detail' course.slug lesson.id %}">
+            {{ lesson.order }}. {{ lesson.title }}
+        </a>
+    </li>
+    {% empty %}
+    <li class="list-group-item">目前沒有建立單元。</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

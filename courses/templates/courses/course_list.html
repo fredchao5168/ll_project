@@ -1,0 +1,21 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+<h1>課程列表</h1>
+{% endblock page_header %}
+
+{% block content %}
+<ul class="list-group">
+    {% for course in courses %}
+    <li class="list-group-item">
+        <a href="{% url 'courses:course_detail' course.slug %}">
+            <strong>{{ course.title }}</strong>
+        </a>
+        <p class="mb-0 text-muted">{{ course.description|truncatechars:100 }}</p>
+    </li>
+    {% empty %}
+    <li class="list-group-item">目前沒有課程。</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
+

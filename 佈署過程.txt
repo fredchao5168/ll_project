@@ -1,0 +1,41 @@
+Skip to main content
+Django administration
+Toggle theme (current theme:auto)
+
+
+"jazzmin",
+"django.contrib.admin",
+"django.contrib.auth",
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "LL 管理後台",
+    "site_header": "LL 後台系統",
+    "welcome_sign": "歡迎使用 LL 後台",
+    "show_ui_builder": False,
+}
+
+
+
+pip freeze > requirements.txt
+
+git add requirements.txt
+git commit -m "Add django-jazzmin to requirements"
+git push origin main
+
+Build Command:
+pip install -r requirements.txt && python manage.py collectstatic --noinput
+
+Start Command:
+python manage.py migrate && python manage_superuser.py && gunicorn ll_project.wsgi
+
+
+git add .
+git commit -m "Modify requirements.txt"
+git push origin main
+
+pip freeze > requirements.txt
+
+
+
+
