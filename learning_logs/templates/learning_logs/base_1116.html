@@ -3,44 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>SSIL｜Smart Sustainable Innovation Lab</title>
-
-    <!-- Recommended: 實驗室簡短說明，用於搜尋結果摘要 -->
-    <meta name="description" content="Smart Sustainable Innovation Lab (SSIL) 專注於智慧科技、永續發展、AI、資料分析、數位轉型與綠色科技研究。">
-
-    <!-- Recommended: 網站作者或單位 -->
-    <meta name="fredchao" content="Smart Sustainable Innovation Lab (SSIL)">
-
-    <!-- Optional: 搜尋優化的關鍵字 -->
-    <meta name="keywords" content="Sustainability, Smart Technology, Innovation, AI, Data Science, ESG, Green Tech, SSIL">
+    <title>Learning Log</title>
 
     {% load django_bootstrap5 %}
     {% bootstrap_css %}
+    
+
 </head>
 <body>
 
     <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
         <div class="container-fluid">
-
-            <a class="navbar-brand d-flex align-items-center" href="{% url 'learning_logs:index' %}">
-                <!-- 左側科技條 Logo（純 CSS） -->
-                <div style="
-                    width: 6px;
-                    height: 28px;
-                    background: linear-gradient(180deg, #0d6efd, #76b6ff);
-                    border-radius: 3px;
-                    margin-right: 10px;
-                "></div>
-
-                <!-- 右側字標 -->
-                <div class="d-flex flex-column lh-1">
-                    <span class="fw-bold fs-4">SSIL</span>
-                    <small class="text-muted fs-6">智慧永續創新</small>
-                </div>
-            </a>
-
-
+            <a class="navbar-brand" href="{% url 'learning_logs:index' %}">
+                Learning Log</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
               data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
